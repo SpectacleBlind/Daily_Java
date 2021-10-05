@@ -1,0 +1,130 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+for(int i = 0 ; i < nums.length-2 ; i++){
+  for(int j = i+1 ; j < nums.length-1 ; j++){
+    for(int k = j+1 ; k < nums.length ; k++){
+     int prime = nums[i]+nums[j]+nums[k];
+     if (prime%2 != 0) list.add(prime); //3개의 서로 다른 자연수를 더하는 것은 2보다 큰 값을 가지고, 2를 제외한 짝수 소수는 없기에, List에 넣는 값 감소 목적
+     
+     }
+  }
+}
+
+for(int i : list){
+    int count = 2;
+    answer++;
+        while(count < i){
+            if(i%count == 0){
+                answer--;
+                break;
+            }
+            count++;
+        }
+}
+    return answer;
+    }}
+    
+    
+    // 테스트 결과는 왔다갔다 하네... 
+테스트 1 〉	통과 (1.19ms, 74.6MB)
+테스트 2 〉	통과 (1.68ms, 75.1MB)
+테스트 3 〉	통과 (0.73ms, 75.9MB)
+테스트 4 〉	통과 (0.66ms, 74.7MB)
+테스트 5 〉	통과 (1.70ms, 73.8MB)
+테스트 6 〉	통과 (4.69ms, 77.7MB)
+테스트 7 〉	통과 (0.42ms, 69.7MB)
+테스트 8 〉	통과 (7.40ms, 77.3MB)
+테스트 9 〉	통과 (1.84ms, 77.1MB)
+테스트 10 〉	통과 (7.28ms, 74.3MB)
+테스트 11 〉	통과 (0.12ms, 74.5MB)
+테스트 12 〉	통과 (0.07ms, 75.4MB)
+테스트 13 〉	통과 (0.12ms, 72.5MB)
+테스트 14 〉	통과 (0.07ms, 72.3MB)
+테스트 15 〉	통과 (0.08ms, 72.9MB)
+테스트 16 〉	통과 (13.45ms, 82.8MB)
+테스트 17 〉	통과 (0.94ms, 68.5MB)
+테스트 18 〉	통과 (0.47ms, 79.1MB)
+테스트 19 〉	통과 (0.08ms, 77.2MB)
+테스트 20 〉	통과 (21.57ms, 90.5MB)
+테스트 21 〉	통과 (14.26ms, 77.9MB)
+테스트 22 〉	통과 (0.12ms, 77.6MB)
+테스트 23 〉	통과 (0.03ms, 74.6MB)
+테스트 24 〉	통과 (12.41ms, 73.9MB)
+테스트 25 〉	통과 (13.41ms, 80.9MB)
+테스트 26 〉	통과 (0.03ms, 86MB)
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.ArrayList;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+for(int i = 0 ; i < nums.length-2 ; i++){
+  for(int j = i+1 ; j < nums.length-1 ; j++){
+    for(int k = j+1 ; k < nums.length ; k++){
+     int prime = nums[i]+nums[j]+nums[k];
+     //if (prime%2 != 0) break;
+     list.add(prime);
+     }
+  }
+}
+
+for(int i : list){
+    int count = 2;
+    answer++;
+        while(count < i){
+            if(i%count == 0){
+                answer--;
+                break;
+            }
+            count++;
+        }
+}
+    return answer;
+    }}
+
+
+
+테스트 1 〉	통과 (1.96ms, 70.1MB)
+테스트 2 〉	통과 (2.27ms, 77.6MB)
+테스트 3 〉	통과 (1.20ms, 78.2MB)
+테스트 4 〉	통과 (0.92ms, 66.1MB)
+테스트 5 〉	통과 (2.51ms, 78.8MB)
+테스트 6 〉	통과 (6.38ms, 81MB)
+테스트 7 〉	통과 (0.63ms, 80.9MB)
+테스트 8 〉	통과 (11.83ms, 79.1MB)
+테스트 9 〉	통과 (2.85ms, 76.2MB)
+테스트 10 〉	통과 (10.06ms, 77.4MB)
+테스트 11 〉	통과 (0.15ms, 76.7MB)
+테스트 12 〉	통과 (0.13ms, 81.2MB)
+테스트 13 〉	통과 (0.30ms, 77.2MB)
+테스트 14 〉	통과 (0.09ms, 76.8MB)
+테스트 15 〉	통과 (0.10ms, 73.6MB)
+테스트 16 〉	통과 (12.81ms, 78MB)
+테스트 17 〉	통과 (4.88ms, 78.8MB)
+테스트 18 〉	통과 (0.51ms, 83.5MB)
+테스트 19 〉	통과 (0.06ms, 77.7MB)
+테스트 20 〉	통과 (23.13ms, 80.2MB)
+테스트 21 〉	통과 (14.82ms, 78.9MB)
+테스트 22 〉	통과 (1.20ms, 72.9MB)
+테스트 23 〉	통과 (0.03ms, 72.3MB)
+테스트 24 〉	통과 (18.63ms, 82.1MB)
+테스트 25 〉	통과 (12.58ms, 82MB)
+테스트 26 〉	통과 (0.05ms, 69.9MB)
