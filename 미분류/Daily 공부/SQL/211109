@@ -1,0 +1,20 @@
+Oracle SQL
+
+중복 제거하기
+
+SELECT count (distinct name)  // count 는 갯수 세기, distinct 는 중복 제거
+FROM animal_ins
+where name is not null
+
+
+
+
+SELECT animal_id, name, 
+  case 
+      when sex_upon_intake like '%Neutered%' then 'O' //조건문 
+      when sex_upon_intake like '%Spayed%' then 'O'
+      else 'X'
+      end as 중성화
+      
+From animal_ins
+order by animal_id
