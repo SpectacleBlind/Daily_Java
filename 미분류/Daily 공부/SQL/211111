@@ -1,0 +1,9 @@
+SELECT count(animal_id) // 카운트로 갯수 세기, 열 이름을 다른걸로 하려면 as 로 바꾸기
+from animal_ins
+
+
+
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE LOWER(NAME) LIKE '%el%' AND ANIMAL_TYPE LIKE 'Dog' //나라에 소문자 el 붙고, 종류가 개 인걸 뽑기
+ORDER BY NAME
