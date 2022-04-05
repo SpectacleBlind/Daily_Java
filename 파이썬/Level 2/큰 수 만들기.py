@@ -1,17 +1,17 @@
 def solution(number, k):
-    answer = [] # Stack
-    
-    for num in number:
-        if not answer:
-            answer.append(num)
-            continue
-        if k > 0:
-            while answer[-1] < num:
-                answer.pop()
-                k -= 1
-                if not answer or k <= 0:
-                    break
-        answer.append(num)
+    collected = []
+
+    for (i, num) in enumerate(number):
+        while collected and collected[-1] < num and k > 0:
+            collected.pop()
+            k -= 1
         
-    answer = answer[:-k] if k > 0 else answer
-    return ''.join(answer)
+        if k == 0:
+            collected += number[i:]
+            break
+
+        collected.append(num)
+
+    collected = collected[:-k] if k > 0 else collected
+    answer = "".join(collected)
+    return answer
